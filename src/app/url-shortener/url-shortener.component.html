@@ -1,0 +1,40 @@
+<div class="container">
+  <h1>URL Shortener</h1>
+  <form (ngSubmit)="onSubmit()">
+    <label for="originalUrl">Enter URL:</label>
+    <input type="text" id="originalUrl" name="originalUrl" [(ngModel)]="originalUrl" required>
+    <button type="submit">Shorten URL</button>
+  </form>
+
+  <div *ngIf="isLoading">
+    <p>Loading...</p>
+  </div>
+
+  <div *ngIf="isSuccess" class="col">
+    <div>
+      {{originaLUrl}}      
+    </div>
+    <div>
+      {{shortUrl}}
+    </div>
+  </div>
+  <!-- <div>
+    <button (click)="copyToClipboard()">Copy to Clipboard</button>
+  </div> -->
+  <!-- </div>  
+    <button (click)="resetForm()">Shorten Another URL</button>
+  </div> -->
+
+  <div *ngIf="isError">
+    <p class="error">{{errorMessage}}</p>
+  </div>
+
+  <div class="cont" *ngIf="databaseData">
+    <h3>Database Data</h3>
+    <ul>
+      <li *ngFor="let data of databaseData" class="list-item">
+        Original URL: <span class="original-url">{{data.original_url}}</span> | Short URL: <span class="short-url">{{data.short_url}}</span>
+      </li>
+    </ul>
+  </div>  
+</div>
