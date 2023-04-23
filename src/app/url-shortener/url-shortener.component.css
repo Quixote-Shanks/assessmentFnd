@@ -3,6 +3,8 @@
   padding: 20px;
   border: 1px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  /* added this line of code to address the issue with the overflow, but haven't tested it yet */
+  overflow: hidden 
 }
 
 .cont {
@@ -11,6 +13,8 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  /* added this line of code to address the issue with the overflow, but haven't tested it yet */
+  overflow: hidden
 }
 
 h3 {
