@@ -16,8 +16,10 @@ interface UrlResponse {
   styleUrls: ['./url-shortener.component.css']
 })
 export class UrlShortenerComponent implements OnInit {
+  //This is the url that used in making the post request
   originalUrl = '';
-  originaLUrl = '';
+  //This is the url that is gotten from the backend
+  originaLUrl = ''; 
   shortUrl = '';
   databaseData: any;
   isLoading = false;
